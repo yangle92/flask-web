@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Flask示例</title>
+</head>
+<body>
+<table>
+    {% for key, value in result.items() %}
+        <tr>
+{#            <th> {{ key }} </th>#}
+{#           <td> {{ value }} </td>#}
+             {%  for i in result[key].split(',') %}
+              <td>  {{ i }} </td>
+             {% endfor %}
+
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
