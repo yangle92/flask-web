@@ -1,13 +1,66 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Flask示例</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Flask示例</title>
+
+<style>
+header {
+    background-color:#696969;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:600px;
+    width:200px;
+    float:left;
+    padding:60px;
+}
+section {
+    width:100px;
+    float:left;
+    padding:10px;
+}
+footer {
+    background-color:#696969;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+</style>
 </head>
+
 <body>
+
+<header>
+<h1>IT管理系统</h1>
+</header>
+
+<nav>
+    常用链接<br>
+    <a href="http://www.baidu.com" target=" _blank">百度</a><br>
+London<br>
+Paris<br>
+Tokyo<br>
+</nav>
+
+<section>
+<h1></h1>
 <form action="/result" method="POST">
-    <p>Token <input type="text" name="input_1"/></p>
-    <p>事件号英文分隔 <input type="text" name="input_2"/></p>
+    <p>Token <input type="text" name="input_1" style="width: 500px;height: 40px;border-radius: 10px"/></p>
+    <p>事件号 <input type="text" name="input_2" style="width: 500px;height: 40px;border-radius: 10px"/></p>
     <p><input type="submit" value="提交"/></p>
 </form>
+</section>
+
+<footer>
+快乐一笑有限公司
+</footer>
+
 </body>
 </html>

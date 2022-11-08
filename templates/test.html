@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Flask示例</title>
+
+<style>
+header {
+    background-color:#696969;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:800px;
+    width:200px;
+    float:left;
+    padding:60px;
+}
+section {
+    width:100px;
+    float:left;
+    padding:10px;
+}
+footer {
+    background-color:#696969;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+</style>
 </head>
+
 <body>
-$END$
+
+<header>
+<h1>IT管理系统</h1>
+</header>
+
+<nav>
+London<br>
+Paris<br>
+Tokyo<br>
+</nav>
+
+<section>
+<h1></h1>
+<table>
+    {% for key, value in result.items() %}
+        <tr>
+{#            <th> {{ key }} </th>#}
+{#           <td> {{ value }} </td>#}
+             {%  for i in result[key].split(',') %}
+              <td>  {{ i }} </td>
+             {% endfor %}
+
+
+        </tr>
+    {% endfor %}
+</table>
+</section>
+
+<footer>
+快乐一笑有限公司
+</footer>
+
 </body>
 </html>
