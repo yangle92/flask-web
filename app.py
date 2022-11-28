@@ -1,7 +1,5 @@
 '''
-
 flask 用户登录认证 https://www.cnblogs.com/ityouknow/p/12993209.html
-
 '''
 
 from flask import Flask
@@ -99,12 +97,19 @@ from flask_login import login_user
 # ...
 @app.route('/login/', methods=('GET', 'POST'))  # 登录
 def login():
+    from flask import Flask, session, redirect, url_for, escape, request
+    from datetime import datetime, timedelta
+
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=0.5)
+
     form = LoginForm()
     emsg = None
     if form.validate_on_submit():
         user_name = form.username.data
         password = form.password.data
         user_info = get_user(user_name)  # 从用户数据中查找用户记录
+        print(user_info)
         if user_info is None:
             emsg = "用户名或密码密码有误"
         else:
@@ -128,13 +133,18 @@ def index():
 
 @app.route('/result', methods=['POST', 'GET'])
 def set_result():
-    if request.method == 'POST':
-        result = request.form
-        print(result,type(result))
-        for i in result['input_2'].split(','):
-            print(i,'value'+i)
-        print('input_2', result['input_2'])
-        return render_template("result.html", result=result,username=current_user.username)
+    try:
+        if request.method == 'POST':
+            result = request.form
+            print(result,type(result))
+            for i in result['input_2'].split(','):
+                print(i,'value'+i)
+            print('input_2', result['input_2'])
+            return render_template("result.html", result=result,username=current_user.username)
+    except:
+
+        return redirect('/')
+
 
 
 
