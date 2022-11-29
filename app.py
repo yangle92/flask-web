@@ -101,7 +101,7 @@ def login():
     from datetime import datetime, timedelta
 
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=0.5)
+    app.permanent_session_lifetime = timedelta(minutes=5)
 
     form = LoginForm()
     emsg = None
@@ -125,7 +125,7 @@ from flask import render_template, url_for
 from flask_login import current_user, login_required
 # ...
 @app.route('/')  # 首页
-@login_required  # 需要登录才能访问
+# @login_required  # 需要登录才能访问
 def index():
     # return render_template('index.html', username=current_user.username)
     return render_template('input_form.html', username=current_user.username)

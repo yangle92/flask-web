@@ -1,74 +1,22 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Flask示例</title>
+<table border="1">
 
-<style>
-header {
-    background-color:#696969;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
-nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:800px;
-    width:200px;
-    float:left;
-    padding:60px;
-}
-section {
-    width:100px;
-    float:left;
-    padding:10px;
-}
-footer {
-    background-color:#696969;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;
-}
-</style>
-</head>
+   <tr>
+     <th>名称</th>
+     <th>官网</th>
+     <th>性质</th>
+   </tr>
 
-<body>
-
-<header>
-<h1>IT管理系统</h1>
-</header>
-
-<nav>
-London<br>
-Paris<br>
-Tokyo<br>
-</nav>
-
-<section>
-    <h1>欢迎 {{ username }}！</h1>
-<a href='{{ url_for('logout')}}'>登出</a>
-
-<table>
-    {% for key, value in result.items() %}
+    {% for k,v in result.items() %}
         <tr>
-{#            <th> {{ key }} </th>#}
-{#           <td> {{ value }} </td>#}
-             {%  for i in result[key].split(',') %}
-              <td>  {{ i }} </td>
-             {% endfor %}
+              <td>  {{ k }} </td>
 
+                    {% for k1 in v %}
+                        <td>  {{ k1 }} </td>
+                    {% endfor %}
 
         </tr>
     {% endfor %}
+
 </table>
-</section>
 
-<footer>
-快乐一笑有限公司
-</footer>
-
-</body>
-</html>
