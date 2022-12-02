@@ -17,7 +17,7 @@
 #     print('%s is shopping'%name)
 # shopping('admin')
 
-
+'''
 def login(func):
     user_info={'admin':'admin','tom':'tom'}
     user=input('Username: ' )
@@ -37,3 +37,11 @@ def danceing():
     print('danceing....')
 
 danceing()
+
+'''
+
+
+import setting
+dir=setting.setting()
+print(dir)
+
